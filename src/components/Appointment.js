@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { FaPhone, FaClock, FaMapMarkerAlt, FaUserMd, FaCalendarAlt } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaPhone, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
+
+const phoneNumber = '918901341831';
 
 const Appointment = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +25,32 @@ const Appointment = () => {
     e.preventDefault();
     // Handle form submission logic here
     console.log(formData);
+    const {name, message, email, phone, time, date, service}=formData
+    const msg = `
+New Service Request:
+
+Full Name: ${name}
+Email: ${email}
+Phone Number: ${phone}
+Service Required: ${service}
+Preferred Date: ${date}
+Preferred Time: ${time}
+
+Additional Message:
+${message}
+  `;
+    const encodedMsg = encodeURIComponent(msg);
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
+    window.open(url, '_blank');
+    setFormData({name: '',
+    email: '',
+    phone: '',
+    date: '',
+    time: '',
+    service: '',
+    message: ''
+  })
+
   };
 
   return (
@@ -76,7 +104,7 @@ const Appointment = () => {
                   name="name"
                   id="name"
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-3 py-2"
                   value={formData.name}
                   onChange={handleChange}
                 />
@@ -90,7 +118,7 @@ const Appointment = () => {
                   name="email"
                   id="email"
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   value={formData.email}
                   onChange={handleChange}
                 />
@@ -104,7 +132,7 @@ const Appointment = () => {
                   name="phone"
                   id="phone"
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-2 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   value={formData.phone}
                   onChange={handleChange}
                 />
@@ -117,7 +145,7 @@ const Appointment = () => {
                   name="service"
                   id="service"
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   value={formData.service}
                   onChange={handleChange}
                 >
@@ -127,6 +155,7 @@ const Appointment = () => {
                   <option value="whitening">Teeth Whitening</option>
                   <option value="filling">Dental Filling</option>
                   <option value="root-canal">Root Canal</option>
+                  <option value="others">Others</option>
                 </select>
               </div>
               <div>
@@ -138,7 +167,7 @@ const Appointment = () => {
                   name="date"
                   id="date"
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   value={formData.date}
                   onChange={handleChange}
                 />
@@ -152,7 +181,7 @@ const Appointment = () => {
                   name="time"
                   id="time"
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   value={formData.time}
                   onChange={handleChange}
                 />
@@ -166,7 +195,7 @@ const Appointment = () => {
                 name="message"
                 id="message"
                 rows="4"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                className="border px-3 py-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>

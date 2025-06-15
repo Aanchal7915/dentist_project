@@ -27,7 +27,7 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-1  mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 />
               </div>
               <div>
@@ -38,7 +38,7 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 />
               </div>
               <div>
@@ -49,7 +49,7 @@ const Contact = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 />
               </div>
               <div>
@@ -60,7 +60,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows="4"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="border px-3 py-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 ></textarea>
               </div>
               <button

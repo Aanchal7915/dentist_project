@@ -23,9 +23,7 @@ const Hero = () => {
               className="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-50 transition duration-300">
                 Book Appointment
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
-                Learn More
-              </button>
+              
             </div>
             <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
               <div className="bg-white bg-opacity-20 p-4 rounded-lg">
