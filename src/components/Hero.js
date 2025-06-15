@@ -43,11 +43,11 @@ const Hero = () => {
             </div>
           </div>
           <div className="hidden md:block">
-            <img
+            {/* <img
               src="/hero-dental.png"
               alt="Dental Care"
               className="w-full h-auto rounded-lg shadow-2xl"
-            />
+            /> */}
           </div>
         </div>
       </div>
